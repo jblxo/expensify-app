@@ -62,3 +62,7 @@ typings/
 
 # Remove auto generated files
 public/dist/
+
+# ENV
+.env.test
+.env.development
