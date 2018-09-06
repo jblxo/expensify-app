@@ -143,9 +143,14 @@ test('should remove expense from firebase', (done) => {
   const id = expenses[2].id;
 
   store.dispatch(startRemoveExpense({id})).then(() => {
-    database.ref(`expenses/${expenses[2].id}`).once('value').then((snapshot) => {
-      expect(snapshot.val()).toBe(null);
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'REMOVE_EXPENSE',
+      id
     });
+    return database.ref(`expenses/${expenses[2].id}`).once('value');
+  }).then((snapshot) => {
+    expect(snapshot.val()).toBeFalsy();
     done();
-  });
+  });;
 });
