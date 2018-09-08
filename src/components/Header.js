@@ -9,4 +9,11 @@ const Header = () => (
   </header>
 );
 
-export default Header;
+const AuthHeader = ({ isLoggedIn }) => {
+  if(isLoggedIn) {
+    return (<Header />);
+  }
+  return (<div></div>);
+}
+
+export default AuthHeader;
