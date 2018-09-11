@@ -1,0 +1,11 @@
+.button {
+    padding: $s-size;
+    color: white;
+    border: none;
+    font-size: $font-size-large;
+    font-weight: 300;
+}
+
+.button--blue {
+    background-color: $blue;
+}
