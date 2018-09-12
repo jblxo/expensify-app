@@ -4,8 +4,19 @@
     border: none;
     font-size: $font-size-large;
     font-weight: 300;
+    display: inline-block;
+
+    &:link,
+    &:visited {
+        text-decoration: none;
+        line-height: 1;
+    }
 }
 
 .button--blue {
     background-color: $blue;
+}
+
+.button--link { 
+    background: transparent;
 }
