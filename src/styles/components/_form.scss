@@ -1,0 +1,14 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__error {
+        margin: 0;
+        margin-bottom: $m-size;
+        font-style: italic;
+    }
+
+    > *:not(:last-child) {
+        margin-bottom: $m-size;
+    }
+}
