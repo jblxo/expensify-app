@@ -6,3 +6,59 @@
     justify-content: space-between;
     padding: $s-size $m-size;
 }
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid darken($color: $off-white, $amount: 7%);
+    border-top: none;
+    color: $dark-grey;
+    padding: $s-size;
+    text-decoration: none;
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: $off-white;
+    }
+
+    @media screen and (min-width: $desktop-breakpoint) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $m-size;        
+    }
+
+    &__title {
+        margin: 0;
+        word-break: break-all;
+    }
+
+    &__sub-title {
+        color: $grey;
+        font-size: $font-size-small;
+    }
+
+    &__data {
+        margin: $s-size 0 0 0;
+
+        @media screen and (min-width: $desktop-breakpoint) {
+            margin: 0;
+            padding-left: $s-size;
+        }
+    }
+}
+
+.list-item--message {
+    align-items: center;
+    justify-content: center;
+    padding: $m-size;
+    &:hover {
+        background: none;
+    }
+}
+
+.list-body {
+    margin-bottom: $m-size;
+    @media screen and (min-width: $desktop-breakpoint) {
+        margin-bottom: $l-size;
+    }
+}
