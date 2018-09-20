@@ -9,7 +9,7 @@ beforeEach(() => {
     startRemoveExpense = jest.fn();
     history = { push: jest.fn() };
     startEditExpense = jest.fn();
-    wrapper = shallow(<EditExpensePage startEditExpense={startEditExpense} startRemoveExpense={startRemoveExpense} history={history} expense={expenses[2]}/>);
+    wrapper = shallow(<EditExpensePage startEditExpense={startEditExpense} startRemoveExpense={startRemoveExpense} history={history} expense={expenses[2]} />);
 });
 
 test('should render EditExpensePage', () => {
@@ -23,7 +23,7 @@ test('should handle editExpense', () => {
 });
 
 test('should remove expense', () => {
-    wrapper.find('button').simulate('click');
+    wrapper.find('button').at(1).simulate('click');
     expect(history.push).toHaveBeenLastCalledWith('/');
     expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expenses[2].id });
 });
